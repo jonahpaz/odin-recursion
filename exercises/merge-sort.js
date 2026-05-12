@@ -21,13 +21,7 @@ function ramifyAux(array) {
 
     return [leftArr, rightArr];
 }
-export function merge(leftArr, rightArr) {
-    let i = j = 0;
-    const mergedArr = [];
-    mergeAux(leftArr, rightArr, mergedArr, i, j);
-    return mergedArr;
-}
-function mergeAux(leftArr, rightArr, mergedArr, i, j) {
+export function merge(leftArr, rightArr, mergedArr = [], i = 0, j = 0) {
     if (leftArr[i] < rightArr[j]) {
         mergedArr.push(leftArr[i]);
         i++;
@@ -50,8 +44,9 @@ function mergeAux(leftArr, rightArr, mergedArr, i, j) {
         }
     }
     if (mergedArr.length !== leftArr.length + rightArr.length) {
-        mergeAux(leftArr, rightArr, mergedArr, i, j);
+        merge(leftArr, rightArr, mergedArr, i, j);
     }
+    return mergedArr;
 }
 export function mergeBranches(tree) {
     if (tree[0][0] instanceof Array) tree[0] = mergeBranches([...tree[0]]);
