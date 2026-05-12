@@ -1,83 +1,88 @@
-import { mergeSort, merge, ramify, mergeBranches } from '../exercises/merge-sort'
+import * as module from '../exercises/merge-sort'
 
-describe('mergeSort', () => {
-    test('ramify', () => {
+describe('Ramify', () => {
+    test('Input [3, 6, 9, 15, 20]', () => {
         const input = [3, 6, 9, 15, 20];
-        const actual = ramify(input);
+        const actual = module.ramify(input);
         const expected = [[[3], [6]], [[9], [[15], [20]]]];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
-    test('ramify ordered', () => {
+    test('Ramify ordered [1, 2, 3, 4, 5]', () => {
         const input = [1, 2, 3, 4, 5];
-        const actual = ramify(input);
+        const actual = module.ramify(input);
         const expected = [[[1], [2]], [[3], [[4], [5]]]];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
-
-    test('merge', () => {
+});
+describe('Merge', () => {
+    test('Merge example 1', () => {
         const input = [[3, 6, 9, 15], [2, 4, 7, 10]];
-        const actual = merge(...input);
+        const actual = module.merge(...input);
         const expected = [2, 3, 4, 6, 7, 9, 10, 15];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
-    test('merge', () => {
+    test('Merge example 2', () => {
         const input = [[3], [4, 5]];
-        const actual = merge(...input);
+        const actual = module.merge(...input);
         const expected = [3, 4, 5];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
 
-    test('merge branches', () => {
+    test('Merge branches function', () => {
         const input = [[3],[[4],[5]]];
-        const actual = mergeBranches(input);
+        const actual = module.mergeBranches(input);
         const expected = [3, 4, 5];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
-
-    test('input base empty', () => {
+});
+describe('Merge Sort', () => {
+    test('Base case: Empty array []', () => {
         const input = [];
-        const actual = mergeSort(input);
+        const actual = module.mergeSort(input);
         const expected = [];
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
-    test('input base non empty', () => {
+    test('Base case: non-empty array [73]', () => {
         const input = [73];
-        const actual = mergeSort(input);
+        const actual = module.mergeSort(input);
         const expected = [73];
         expect(expected).toEqual(actual);
     });
-    test('input already ordered', () => {
+    test('Input already ordered [1, 2, 3, 4, 5]', () => {
         const input = [1, 2, 3, 4, 5];
-        const actual = mergeSort(input);
+        const actual = module.mergeSort(input);
         const expected = [1, 2, 3, 4, 5];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
     
-    
-    test('input real deal 1', () => {
+    test('Real case 1', () => {
         const input = [3, 2, 1, 13, 8, 5, 0, 1];
-        const actual = mergeSort(input);
+        const actual = module.mergeSort(input);
         const expected = [0, 1, 1, 2, 3, 5, 8, 13];
-        console.log('expected', expected);
-        console.log('actual', actual);
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
-    test('input real deal 2', () => {
+    test('Real case 2', () => {
         const input = [105, 79, 100, 110];
-        const actual = mergeSort(input);
+        const actual = module.mergeSort(input);
         const expected = [79, 100, 105, 110];
+        // console.log('expected', expected);
+        // console.log('actual', actual);
         expect(expected).toEqual(actual);
     });
 });

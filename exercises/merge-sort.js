@@ -9,7 +9,6 @@ export function ramify(array) {
 }
 function ramifyAux(array) {
     const midPoint = Math.floor(array.length / 2);
-    console.log(midPoint)
     let leftArr = array.slice(0, midPoint);
     let rightArr = array.slice(midPoint);
 
