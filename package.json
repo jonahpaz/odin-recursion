@@ -1,0 +1,24 @@
+{
+  "name": "odin-recursion",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jonahpaz/odin-recursion#readme",
+  "bugs": {
+    "url": "https://github.com/jonahpaz/odin-recursion/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonahpaz/odin-recursion.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "fibonacci.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.5",
+    "jest": "^30.4.2"
+  }
+}
